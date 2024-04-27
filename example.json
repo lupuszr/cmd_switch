@@ -1,20 +1,44 @@
-[{
-    "label": "hello",
-	"cmd": "echo world"
-},{
-	"label": "echo Hi",
-    "cmd": "ls -la"
-}, {
-	"group": "test",
-	"config": [
-		{
-			"label": "inside",
-			"cmd": "cat example.json"
-		}
-	]
-},
-{
-    "label": "halihello",
-	"cmd": "echo world"
-}
+[
+    {
+        "label": "Display Current Directory",
+        "cmd": "pwd"
+    },
+    {
+        "label": "List All Files",
+        "cmd": "ls -a"
+    },
+    {
+        "group": "File Operations",
+        "config": [
+            {
+                "label": "Create New File",
+                "cmd": "touch newfile.txt"
+            },
+            {
+                "label": "Write to File",
+                "cmd": "echo 'Hello, World!' > newfile.txt"
+            },
+            {
+                "label": "Read File",
+                "cmd": "cat newfile.txt"
+            }
+        ]
+    },
+    {
+        "group": "System Info",
+        "config": [
+            {
+                "label": "Check Disk Usage",
+                "cmd": "df -h"
+            },
+            {
+                "label": "Memory Usage",
+                "cmd": "free -h"
+            }
+        ]
+    },
+    {
+        "label": "Echo Custom Message",
+        "cmd": "echo 'This is a custom message.'"
+    }
 ]
