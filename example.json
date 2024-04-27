@@ -1,0 +1,20 @@
+[{
+    "label": "hello",
+	"cmd": "echo world"
+},{
+	"label": "echo Hi",
+    "cmd": "ls -la"
+}, {
+	"group": "test",
+	"config": [
+		{
+			"label": "inside",
+			"cmd": "cat example.json"
+		}
+	]
+},
+{
+    "label": "halihello",
+	"cmd": "echo world"
+}
+]
