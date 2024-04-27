@@ -8,6 +8,13 @@
         "cmd": "ls -a"
     },
     {
+    	"label": "Echo an env",
+    	"cmd": "echo $MY_ENV",
+    	"envs": {
+    		"MY_ENV": "My env value"	
+    	}
+    },
+    {
         "group": "File Operations",
         "config": [
             {

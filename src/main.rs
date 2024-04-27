@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::{self, BufReader, Write};
 use std::num::ParseIntError;
@@ -19,6 +20,7 @@ use termimad::MadSkin;
 
 #[derive(Debug, Deserialize)]
 struct Config {
+    envs: Option<HashMap<String, String>>,
     pub label: String,
     pub cmd: String,
 }
@@ -110,6 +112,13 @@ fn exec() -> Result<(), Error> {
 
     match flatten_cmd.get(index - 1) {
         Some(conf) => {
+            match conf.envs.clone() {
+                Some(envs) => {
+                    cmd.env_clear();
+                    cmd.envs(&envs);
+                }
+                None => {}
+            }
             cmd.arg("-c").arg(conf.cmd.as_str());
         }
         None => {
